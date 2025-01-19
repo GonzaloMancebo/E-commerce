@@ -22,7 +22,7 @@ function Header() {
           <Link href="/auth/login">
             <button>Login</button>
           </Link>
-          <Link href="/signup">
+          <Link href="/auth/signup">
             <button>Sign Up</button>
           </Link>
         </div>

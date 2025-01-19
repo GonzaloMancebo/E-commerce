@@ -24,67 +24,70 @@ function SignUp() {
   };
 
   return (
-    <>
-    <Header />
-    <div className="sign-up-container">
-    <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit} className="form-container">
-        <div className="input-group">
-          <label htmlFor="firstname">First Name</label>
-          <input
-            type="text"
-            id="firstname"
-            name="firstname"
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-          />
-        </div>
-        
-        <div className="input-group">
-          <label htmlFor="lastname">Last Name</label>
-          <input
-            type="text"
-            id="lastname"
-            name="lastname"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </div>
-        
-        <div className="input-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-
-        <div className="input-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="button-group">
-        <button type="submit" className="submit-btn">Sign Up</button>
-
-        <Link href="/login">
-        <button type="button" className="login-btn">Login</button>
-        </Link>
-        </div>
+    <div className="page-container">
+      <Header />
       
-      </form>
-    </div>
-    </>
-  );
+      {/* Contenedor del formulario */}
+      <div className="sign-up-container">
+        <form onSubmit={handleSubmit} className="form-container">
+          <h2>Sign Up</h2>
+          <div className="input-group">
+            <label htmlFor="firstname">First Name</label>
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </div>
+          
+          <div className="input-group">
+            <label htmlFor="lastname">Last Name</label>
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
+          
+          <div className="input-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
+          <div className="input-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="input-group-button-login">
+            <Link href="/login">
+              <button type="button" className="signup-btn">Sign Up</button>
+            </Link>
+            </div>
+            <div className="input-group-button-signup">
+            <Link href="/login">
+              <button type="button" className="login-btn">Login</button>
+            </Link>
+            </div>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default SignUp;

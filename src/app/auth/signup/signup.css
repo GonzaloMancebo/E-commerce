@@ -5,24 +5,24 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
     display: flex;
-    flex-direction: column; /* Para que el header quede encima y el contenido abajo */
-  }
-  
-  /* Contenedor del formulario */
-  .sign-up-container {
+    flex-direction: column;
+}
+
+/* Contenedor principal */
+.sign-up-container {
     width: 100%;
     flex-grow: 1; /* Hace que el contenedor ocupe todo el espacio restante */
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     padding: 0 10px;
-    flex-direction: column; /* Para que el header quede encima y el contenido abajo */
-  }
-  
-  /* Formulario (grid) */
-  .form-container {
+    height: calc(100vh - 10px); /* Ajusta el espacio restando la altura del Header */
+}
+
+/* Formulario (grid) */
+.form-container {
     display: grid; /* Define el contenedor como un grid */
     grid-template-columns: 1fr 1fr; /* Crea dos columnas, una para cada campo */
     grid-template-rows: auto; /* Las filas se ajustarán automáticamente */
@@ -32,82 +32,96 @@ body {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    margin: 4%;
-    background-color: #3a3a3a; /* Fondo ligeramente oscuro para el formulario */
-  }
-  
-  /* Estilos para el título */
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos para los grupos de input */
-  .input-group {
+    background-color: #3a3a3a;
+    max-height: 70%;
+}
+
+/* Estilo para el título del formulario */
+.form-container h2 {
+    grid-column: 1 / -1; /* El título abarca todo el ancho del formulario */
+    text-align: center; /* Centrado horizontalmente */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-size: 2rem;
+    color: #f5f5f5;
+}
+
+/* Estilos para los grupos de input */
+.input-group {
     margin-bottom: 15px;
-  }
-  
-  /* Estilo general para los inputs */
-  input {
+}
+
+/* Estilo general para los inputs */
+input {
     width: 100%;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 3px;
     border-radius: 6px;
     border: 1px solid #bbb;
     background-color: #555;
     color: #f5f5f5;
     font-size: 1.1rem;
-  }
-  
-  /* Efecto de enfoque para los inputs */
-  input:focus {
+}
+
+/* Efecto de enfoque para los inputs */
+input:focus {
     outline: none;
     border-color: #1f78d1; /* Color azul cuando el campo está en foco */
-  }
-  
-  /* Estilos para los botones */
-  button {
+}
+
+/* Estilos generales para los botones */
+button {
     background-color: #1f78d1; /* Azul brillante para los botones */
     color: white;
-    padding: 12px 30px;
+    padding: 12px 60px;
     border: none;
     border-radius: 8px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    
-  }
-  
-  /* Efecto hover para los botones */
-  button:hover {
+}
+
+.input-group-button-signup {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: flex-end;
+}
+
+.input-group-button-login {
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: flex-end; /* Mueve los botones hacia la derecha */
+    align-items: flex-end;
+}
+
+
+/* Efecto hover para los botones */
+button:hover {
     background-color: #155fa7; /* Color más oscuro al hacer hover */
     transform: scale(1.05); /* Aumento de tamaño al pasar el cursor */
-  }
-  
-  /* Efecto active para los botones */
-  button:active {
+}
+
+/* Efecto active para los botones */
+button:active {
     transform: scale(1); /* Restablecer tamaño al hacer clic */
-  }
-  
-  /* Estilos para el contenedor de los botones */
-  .button-group {
-    display: flex;
-    flex-direction: column; /* Los botones estarán apilados verticalmente */
-    justify-content: center; /* Centra los botones verticalmente */
-    align-items: center; /* Centra los botones horizontalmente */
-    gap: 20px; /* Espacio entre los botones */
-    margin-top: 20px;
-    background-color: red;
-    margin-left: 100%;
-    height: 100px;
-  }
-  
-  /* Estilos para el botón de login */
-  .login-btn {
+}
+
+
+/* Estilos para el botón de login */
+.login-btn {
     background-color: #4c4c4c; /* Fondo gris para el botón de Login */
-  }
-  
-  .login-btn:hover {
+}
+
+/* Efecto hover para el botón de login */
+.login-btn:hover {
     background-color: #333; /* Color más oscuro al hacer hover */
-  }
-  
+}
