@@ -1,0 +1,113 @@
+/* Body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between; /* Espacio entre el contenido de los productos y el filtro */
+}
+
+/* Productos Container */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+  gap: 20px; /* Espacio entre los productos */
+  padding: 20px;
+  box-sizing: border-box;
+  width: calc(100% - 250px); /* Ancho de los productos ajustado, dejando espacio a la derecha */
+}
+
+/* Estilo de cada Producto */
+.product {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Asegurando que los productos no ocupen toda la columna */
+  box-sizing: border-box;
+  border-width: 2px;
+  border-color: grey; 
+  border-style: solid ;
+  width: 90%; /* Asegurando que los productos no ocupen toda la columna */
+  box-sizing: border-box;
+  border-width: 1px;
+  border-color: grey;
+  min-height: 250px; /* Altura fija para todos los productos */
+  min-width: 250px; /* Altura fija para todos los productos */
+
+}
+
+/* Estilos de la imagen */
+.product img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Títulos de productos */
+h3 {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  overflow: hidden; /* Oculta el contenido excedente */
+  text-overflow: ellipsis; /* Añade puntos suspensivos si el contenido es más largo */
+  display: -webkit-box; /* Configura un contenedor flexible para el truncado */
+  -webkit-box-orient: vertical; /* Define orientación vertical para el contenedor */
+  line-clamp: 2; /* Muestra un máximo de 2 líneas */
+  -webkit-line-clamp: 2; /* Muestra un máximo de 2 líneas (propiedad específica para navegadores Webkit) */
+}
+
+
+/* Descripción de productos */
+p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Categoría del producto */
+h4 {
+  font-size: 1rem; /* Tamaño ligeramente más pequeño que el título principal */
+  color: #666; /* Color gris para menor énfasis */
+  margin: 5px 0; /* Espaciado entre el título y los detalles */
+}
+
+/* Precio del producto */
+p {
+  font-size: 1.2rem; /* Tamaño un poco mayor para destacar el precio */
+  font-weight: bold; /* Resaltar el precio */
+  color: #444; /* Un tono más oscuro para destacar */
+  margin: 10px 0; /* Espaciado entre el precio y otros elementos */
+}
+
+/* Botones de acción */
+button {
+  background-color: #007bff; /* Azul claro para botones */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 15px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente estándar */
+  cursor: pointer; /* Indicar interactividad */
+  margin: 5px; /* Espaciado entre botones */
+  transition: background-color 0.3s ease; /* Suavidad al pasar el cursor */
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+}
+
+button:active {
+  background-color: #003f7f; /* Azul más profundo al hacer clic */
+}
+
+/* Alinear botones */
+button:first-of-type {
+  margin-right: 10px; /* Espaciado adicional entre el primer y el segundo botón */
+}
