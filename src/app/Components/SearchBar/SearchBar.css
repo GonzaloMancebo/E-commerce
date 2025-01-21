@@ -1,0 +1,33 @@
+/* SearchBar.css */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Esto asegura que el ícono y el input estén distribuidos correctamente */
+    width: 400px; /* Establece un ancho fijo para toda la barra de búsqueda */
+    height: 50px;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 120px;
+    margin-left: 20px;
+    position: relative;
+  }
+  
+  .search-bar-input {
+    width: 100%; /* Ocupa el 100% del contenedor pero respetando el ancho fijo */
+    height: 40px;
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding-right: 30px; /* Espacio para el ícono */
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 15px; 
+    font-size: 20px;
+    color: #007bff;
+    cursor: pointer;
+  }
+  

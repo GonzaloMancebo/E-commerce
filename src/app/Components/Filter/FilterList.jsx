@@ -8,7 +8,6 @@ const FilterList = ({ selectedCategory, setSelectedCategory }) => {
 
   // Lista de categorías que quieres mostrar
   const includedCategories = [
-    "All",
     "Clothes",
     "Furniture",
     "Electronics",
@@ -16,7 +15,12 @@ const FilterList = ({ selectedCategory, setSelectedCategory }) => {
     "Miscellaneous",
   ];
 
-  // Fetch data when the component mounts
+  // Función para validar si la URL de la imagen es válida
+  const isValidImageUrl = (url) => {
+    return url && url.startsWith("http") && url.includes("placeimg.com");
+  };
+
+  // Fetch categories when the component mounts
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -33,7 +37,10 @@ const FilterList = ({ selectedCategory, setSelectedCategory }) => {
           includedCategories.includes(category.name)
         );
 
-        setCategories(filteredCategories); // Guardar las categorías filtradas en el estado
+        // Agregar la categoría "All" al principio
+        const finalCategories = [{ name: "All" }, ...filteredCategories];
+
+        setCategories(finalCategories); // Guardar las categorías filtradas en el estado
         setLoadingCategories(false); // Dejar de mostrar el "loading" cuando se obtengan las categorías
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -44,28 +51,28 @@ const FilterList = ({ selectedCategory, setSelectedCategory }) => {
     fetchCategories(); // Llamar la función para obtener las categorías
   }, []); // El arreglo vacío asegura que la llamada solo se haga una vez al cargar el componente
 
-  if (loadingCategories) {
-    return <div>Loading categories...</div>;
-  }
+ 
 
   return (
     <div className="filter-list">
-      <h2>Categories</h2>
-      <div className="category-container">
-        <ul className="category-list">
-          {categories.map((category) => (
-            <li
-              key={category.id}
-              className={`category-item ${selectedCategory === category.name ? "selected" : ""}`}
-              onClick={() => setSelectedCategory(category.name)} // Cambiar la categoría seleccionada
-            >
-              {category.name}
-            </li>
-          ))}
-        </ul>
-      </div>
+      {loadingCategories ? (  // Si está cargando las categorías, mostrar el mensaje
+        <div className="loading-message">Loading categories...</div>
+      ) : (
+        <div className="category-container">
+          <ul className="category-list">
+            {categories.map((category) => (
+              <li
+                key={category.name}
+                className={`category-item ${selectedCategory === category.name ? "selected" : ""}`}
+                onClick={() => setSelectedCategory(category.name)} // Cambiar la categoría seleccionada
+              >
+                {category.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
-};
-
+}
 export default FilterList;

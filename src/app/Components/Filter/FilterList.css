@@ -1,38 +1,76 @@
+/* Filtro */
+.filter-list {
+  width: 250px; /* Ancho fijo para el filtro */
+  max-height: 430px;
+  position: fixed; /* Fija el filtro en la pantalla */
+  right: 20px; /* Fija el filtro al lado derecho */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  z-index: 10; /* Asegura que el filtro esté por encima de otros elementos */
+  height: calc(100vh - 40px); /* Asegura que el filtro tenga la altura de la ventana */
+  overflow-y: auto;
+}
+
+/* Contenedor de las categorías */
 .category-list {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .category-list h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .category-list ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .category-item {
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    font-size: 18px;
-    color: #444;
-    text-align: center;
-  }
-  
-  .category-item:hover {
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
-  
+  width: 100%;
+  max-width: 250px; /* Un ancho más pequeño para el filtro */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+}
+
+/* Título del filtro */
+.category-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Lista de categorías */
+.category-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Elemento de cada categoría */
+.category-item {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #444;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efecto hover para los elementos de la lista */
+.category-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilo para el elemento seleccionado */
+.category-item.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.category-item.selected:hover {
+  background-color: #0056b3;
+}
+
+.loading-message {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #666;
+}

@@ -1,3 +1,5 @@
+/* products.css */
+
 /* Body */
 body {
   font-family: Arial, sans-serif;
@@ -5,7 +7,10 @@ body {
   padding: 0;
   display: flex;
   justify-content: space-between; /* Espacio entre el contenido de los productos y el filtro */
+  flex-wrap: wrap; /* Esto ayudará a que en pantallas más pequeñas los productos y el filtro se acomoden */
 }
+
+
 
 /* Productos Container */
 .products-container {
@@ -14,7 +19,11 @@ body {
   gap: 20px; /* Espacio entre los productos */
   padding: 20px;
   box-sizing: border-box;
-  width: calc(100% - 250px); /* Ancho de los productos ajustado, dejando espacio a la derecha */
+  width: calc(100% - 300px); /* Ancho de los productos ajustado, dejando espacio a la derecha para el filtro */
+  margin-right: 20px; /* Espacio adicional a la derecha */
+  flex-grow: 1; 
+  margin-top: 10px;
+  /* Esto permitirá que el contenedor de productos ocupe el espacio restante */
 }
 
 /* Estilo de cada Producto */
@@ -30,15 +39,10 @@ body {
   width: 100%; /* Asegurando que los productos no ocupen toda la columna */
   box-sizing: border-box;
   border-width: 2px;
-  border-color: grey; 
-  border-style: solid ;
-  width: 90%; /* Asegurando que los productos no ocupen toda la columna */
-  box-sizing: border-box;
-  border-width: 1px;
   border-color: grey;
+  border-style: solid;
   min-height: 250px; /* Altura fija para todos los productos */
   min-width: 250px; /* Altura fija para todos los productos */
-
 }
 
 /* Estilos de la imagen */
@@ -56,14 +60,13 @@ h3 {
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
-  overflow: hidden; /* Oculta el contenido excedente */
-  text-overflow: ellipsis; /* Añade puntos suspensivos si el contenido es más largo */
-  display: -webkit-box; /* Configura un contenedor flexible para el truncado */
-  -webkit-box-orient: vertical; /* Define orientación vertical para el contenedor */
-  line-clamp: 2; /* Muestra un máximo de 2 líneas */
-  -webkit-line-clamp: 2; /* Muestra un máximo de 2 líneas (propiedad específica para navegadores Webkit) */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
 }
-
 
 /* Descripción de productos */
 p {
@@ -73,41 +76,80 @@ p {
 
 /* Categoría del producto */
 h4 {
-  font-size: 1rem; /* Tamaño ligeramente más pequeño que el título principal */
-  color: #666; /* Color gris para menor énfasis */
-  margin: 5px 0; /* Espaciado entre el título y los detalles */
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0;
 }
 
 /* Precio del producto */
 p {
-  font-size: 1.2rem; /* Tamaño un poco mayor para destacar el precio */
-  font-weight: bold; /* Resaltar el precio */
-  color: #444; /* Un tono más oscuro para destacar */
-  margin: 10px 0; /* Espaciado entre el precio y otros elementos */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+  margin: 10px 0;
 }
 
 /* Botones de acción */
 button {
-  background-color: #007bff; /* Azul claro para botones */
-  color: #fff; /* Texto blanco */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 10px 15px; /* Espaciado interno */
-  font-size: 1rem; /* Tamaño de fuente estándar */
-  cursor: pointer; /* Indicar interactividad */
-  margin: 5px; /* Espaciado entre botones */
-  transition: background-color 0.3s ease; /* Suavidad al pasar el cursor */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 5px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3; /* Azul más oscuro al pasar el cursor */
+  background-color: #0056b3;
 }
 
 button:active {
-  background-color: #003f7f; /* Azul más profundo al hacer clic */
+  background-color: #003f7f;
 }
 
 /* Alinear botones */
 button:first-of-type {
-  margin-right: 10px; /* Espaciado adicional entre el primer y el segundo botón */
+  margin-right: 10px;
+}
+
+/* Estilo del filtro */
+.category-list {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-list h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.category-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.category-item {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  color: #444;
+  text-align: center;
+}
+
+.category-item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
 }
