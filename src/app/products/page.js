@@ -2,9 +2,10 @@
 import { useState, useEffect } from "react";
 import Header from "../Components/Header/Header";
 import ProductList from "../Components/ProductList/ProductList"; // Importar el componente de productos
-import "./products.css";
 import FilterList from "../Components/Filter/FilterList"; // Filtro de categorías
 import SearchBar from "../Components/SearchBar/SearchBar"; // Barra de búsqueda
+import "./products.css";
+
 
 function Products() {
   const [products, setProducts] = useState([]); // Estado para almacenar los productos
@@ -23,7 +24,10 @@ function Products() {
         const data = await response.json();
         // Si el producto no tiene una imagen válida, asignamos una imagen predeterminada
         const updatedProducts = data.map((product) => {
-          const validImage = product.images && product.images.length > 0 && !product.images.some(image => image.includes('"'));
+          const validImage =
+            product.images &&
+            product.images.length > 0 &&
+            !product.images.some((image) => image.includes('"'));
           return {
             ...product,
             images: validImage ? product.images : [defaultImage], // Asignar imagen predeterminada si no es válida
@@ -40,6 +44,20 @@ function Products() {
 
     fetchProducts(); // Llamar la función para obtener los productos
   }, []); // El arreglo vacío asegura que la llamada solo se haga una vez al cargar el componente
+
+  // Filtrar productos por categoría seleccionada
+  useEffect(() => {
+    if (selectedCategory === "All") {
+      setFilteredProducts(products); // Mostrar todos los productos si la categoría es "All"
+    } else {
+      const filtered = products.filter(
+        (product) =>
+          product.category &&
+          product.category.name === selectedCategory // Comparar con la categoría seleccionada
+      );
+      setFilteredProducts(filtered);
+    }
+  }, [selectedCategory, products]); // Ejecutar cuando cambie la categoría o los productos
 
   return (
     <div>

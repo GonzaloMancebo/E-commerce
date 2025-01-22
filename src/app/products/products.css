@@ -41,8 +41,10 @@ body {
   border-width: 2px;
   border-color: grey;
   border-style: solid;
-  min-height: 250px; /* Altura fija para todos los productos */
-  min-width: 250px; /* Altura fija para todos los productos */
+  min-height: 350px; /* Altura fija para todos los productos */
+  max-height: 400px; /* Limitar el crecimiento vertical */
+  min-width: 250px; /* Ancho mínimo */
+  max-width: 300px; 
 }
 
 /* Estilos de la imagen */
@@ -56,7 +58,7 @@ body {
 /* Títulos de productos */
 h3 {
   margin-top: 10px;
-  font-size: 1rem;
+  font-size: 0.8rem; /* Ajusta el tamaño del texto según tu diseño */
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
@@ -64,9 +66,10 @@ h3 {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  line-clamp: 2;
+  line-clamp: 0;
   -webkit-line-clamp: 2;
 }
+
 
 /* Descripción de productos */
 p {

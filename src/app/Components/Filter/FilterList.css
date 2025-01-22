@@ -1,9 +1,10 @@
 /* Filtro */
 .filter-list {
   width: 250px; /* Ancho fijo para el filtro */
-  max-height: 430px;
+  max-height: 450px;
   position: fixed; /* Fija el filtro en la pantalla */
-  right: 20px; /* Fija el filtro al lado derecho */
+  right: 150px;
+  bottom:  20px; /* Fija el filtro al lado derecho */
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 8px;
