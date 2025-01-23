@@ -5,7 +5,7 @@ import Link from "next/link";
 import "./signup.css"; // Asegúrate de tener este archivo con los estilos
 import Header from "@/app/Components/Header/Header";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"; // Importar Firebase Auth
-import app from "../../../../firebase.config"; // Importa tu configuración de Firebase
+import {app} from "../../../../firebase.config"; // Importa tu configuración de Firebase
 
 function SignUp() {
   const [firstName, setFirstName] = useState("");
