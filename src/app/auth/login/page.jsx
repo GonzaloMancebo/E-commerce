@@ -47,7 +47,7 @@ function Login() {
 
       // Redirigir 
       setTimeout(() => {
-        router.push("/products"); // O a la página principal que elijas
+        router.push("/products"); 
       }, 3000);
     } catch (error) {
       showNotification(error.message, "error");
