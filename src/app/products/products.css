@@ -6,8 +6,8 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between; /* Espacio entre el contenido de los productos y el filtro */
-  flex-wrap: wrap; /* Esto ayudará a que en pantallas más pequeñas los productos y el filtro se acomoden */
+  justify-content: space-between; 
+  flex-wrap: wrap;
 }
 
 /* Productos Container */
@@ -17,8 +17,8 @@ body {
   gap: 20px; /* Espacio entre los productos */
   padding: 20px;
   box-sizing: border-box;
-  width: calc(100% - 300px); /* Ancho de los productos ajustado, dejando espacio a la derecha para el filtro */
-  margin-right: 20px; /* Espacio adicional a la derecha */
+  width: calc(100% - 300px); 
+  margin-right: 20px; 
   flex-grow: 1; 
   margin-top: 10px;
 }
