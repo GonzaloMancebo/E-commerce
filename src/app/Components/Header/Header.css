@@ -1,5 +1,6 @@
 /* Contenedor principal del header */
 .header nav {
+  font-family: Arial, sans-serif;
   position: fixed; /* Fija el header en la parte superior */
   top: 0; /* Se queda en la parte superior de la pantalla */
   left: 0;
@@ -19,6 +20,7 @@
 
 /* Estilo para el título */
 .header h1 {
+  font-family: Arial, sans-serif;
   color: white;
   font-size: 3rem;
   font-weight: bold;
@@ -26,6 +28,7 @@
 
 /* Estilo para la lista de navegación */
 .header ul {
+  font-family: Arial, sans-serif;
   display: flex;
   gap: 24px;
   list-style: none;
@@ -51,6 +54,7 @@
 
 /* Botones */
 .header button {
+  font-family: Arial, sans-serif;
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
@@ -69,7 +73,6 @@
   background-color: black; /* Verde para Sign Up */
 }
 
-/* Ajuste para el contenido principal, para evitar que quede oculto debajo del header fijo */
 .body-content {
-  margin-top: 100px; /* Deja espacio suficiente para que el contenido no quede oculto debajo del header */
+  margin-top: 100px; 
 }

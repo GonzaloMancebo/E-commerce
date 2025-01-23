@@ -1,6 +1,7 @@
 /* SearchBar.css */
 
 .search-bar {
+  font-family: Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-between; /* Esto asegura que el ícono y el input estén distribuidos correctamente */

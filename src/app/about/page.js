@@ -19,7 +19,7 @@ function About() {
       <div className="about-container">
         {/* Sección de introducción */}
         <p>
-          Hello there! I'm Gonzalo Mancebo, the passionate developer behind this website. With a keen eye for detail and a
+          Hello there! I&apos;m Gonzalo Mancebo, the passionate developer behind this website. With a keen eye for detail and a
           love for crafting seamless digital experiences, I set out to create a unique and user-friendly online shopping
           platform.
         </p>
@@ -38,7 +38,7 @@ function About() {
 {/* Sección del backend */}
 <h1>A Glimpse into the Backend</h1>
 <p>
-  While my expertise primarily lies in frontend development, I've integrated Node.js and Express.js on the
+  While my expertise primarily lies in frontend development, I&apos;ve integrated Node.js and Express.js on the
   backend to ensure a robust and efficient server-side infrastructure. This combination allows for smooth
   communication between the frontend and the server, ensuring a seamless user experience.
 </p>

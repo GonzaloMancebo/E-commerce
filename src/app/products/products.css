@@ -10,8 +10,6 @@ body {
   flex-wrap: wrap; /* Esto ayudará a que en pantallas más pequeñas los productos y el filtro se acomoden */
 }
 
-
-
 /* Productos Container */
 .products-container {
   display: grid;
@@ -23,7 +21,6 @@ body {
   margin-right: 20px; /* Espacio adicional a la derecha */
   flex-grow: 1; 
   margin-top: 10px;
-  /* Esto permitirá que el contenedor de productos ocupe el espacio restante */
 }
 
 /* Estilo de cada Producto */
@@ -36,123 +33,105 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* Asegurando que los productos no ocupen toda la columna */
+  width: 100%;
   box-sizing: border-box;
   border-width: 2px;
   border-color: grey;
   border-style: solid;
-  min-height: 350px; /* Altura fija para todos los productos */
-  max-height: 400px; /* Limitar el crecimiento vertical */
-  min-width: 250px; /* Ancho mínimo */
+  min-height: 350px;
+  max-height: 400px;
+  min-width: 250px;
   max-width: 300px; 
 }
 
-/* Estilos de la imagen */
-.product img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  margin-top: 10px;
+/* Media Queries para pantallas más pequeñas */
+
+/* Pantallas de 724px o menos */
+@media (max-width: 724px) {
+  /* Para el body: los productos se ajustan en una sola columna */
+  body {
+    flex-direction: column;
+    align-items: stretch; /* Asegura que el contenido ocupe el ancho completo */
+  }
+
+  /* Para la .products-container: solo una columna */
+  .products-container {
+    width: 100%; /* Ocupa todo el ancho */
+    grid-template-columns: 1fr; /* Solo una columna */
+    margin-right: 0;
+    width: 200px;
+  }
+
+  /* Ajustes a los productos */
+  .product {
+    min-width: 270px; /* Disminuir el ancho mínimo */
+    max-width: 100%; /* Los productos ocupan todo el ancho */
+    min-height: 300px; /* Reducir la altura */
+  }
+
+  /* Títulos de productos */
+  h3 {
+    font-size: 1rem; /* Aumentar el tamaño del título para mejor legibilidad */
+    line-clamp: 3;
+  }
+
+  /* Descripción de productos */
+  p {
+    font-size: 0.9rem; /* Ajustar el tamaño de la descripción */
+  }
+
+  /* Categoría de producto */
+  h4 {
+    font-size: 0.9rem; /* Ajustar el tamaño de la categoría */
+  }
+
+  /* Botones de acción */
+  button {
+    font-size: 0.9rem; /* Reducir el tamaño de los botones */
+    padding: 8px 12px; /* Ajustar el padding */
+  }
+
+  .filter-list {
+    width: 250px; /* Ancho fijo para el filtro */
+    max-height: 450px;
+    position: fixed; /* Fija el filtro en la pantalla */
+    right: 150px;
+    bottom: -130px; /* Fija el filtro al lado derecho */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    z-index: 10; /* Asegura que el filtro esté por encima de otros elementos */
+    height: calc(100vh - 40px); /* Asegura que el filtro tenga la altura de la ventana */
+    overflow-y: auto;
+    max-width: 200px; /* Disminuir el ancho mínimo */
+  }
 }
 
-/* Títulos de productos */
-h3 {
-  margin-top: 10px;
-  font-size: 0.8rem; /* Ajusta el tamaño del texto según tu diseño */
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 15px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 0;
-  -webkit-line-clamp: 2;
-}
+/* Para pantallas de 1024px o más (como laptops o pantallas grandes) */
+@media (min-width: 1024px) {
+  /* Aumentamos el número de columnas en pantallas grandes */
+  .products-container {
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+  }
 
+  .product {
+    max-width: 350px; /* Hacer los productos más grandes en pantallas grandes */
+  }
 
-/* Descripción de productos */
-p {
-  color: #555;
-  font-size: 1rem;
-}
-
-/* Categoría del producto */
-h4 {
-  font-size: 1rem;
-  color: #666;
-  margin: 5px 0;
-}
-
-/* Precio del producto */
-p {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #444;
-  margin: 10px 0;
-}
-
-/* Botones de acción */
-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin: 5px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-button:active {
-  background-color: #003f7f;
-}
-
-/* Alinear botones */
-button:first-of-type {
-  margin-right: 10px;
-}
-
-/* Estilo del filtro */
-.category-list {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.category-list h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
-}
-
-.category-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.category-item {
-  background-color: #fff;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  font-size: 18px;
-  color: #444;
-  text-align: center;
-}
-
-.category-item:hover {
-  background-color: #f1f1f1;
-  cursor: pointer;
+  .filter-list {
+    width: 250px;
+    max-height: 450px;
+    position: fixed; 
+    right: 50px;
+    bottom: -40px; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    z-index: 10; 
+    height: calc(100vh - 40px); 
+    overflow-y: auto;
+    max-width: 200px; 
+  }
 }

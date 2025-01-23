@@ -1,29 +1,31 @@
 /* Filtro */
 .filter-list {
-  width: 250px; /* Ancho fijo para el filtro */
+  width: 250px; 
   max-height: 450px;
-  position: fixed; /* Fija el filtro en la pantalla */
+  position: fixed; 
   right: 150px;
-  bottom:  20px; /* Fija el filtro al lado derecho */
+  bottom: 20px; 
   padding: 20px;
-  background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   list-style: none;
-  z-index: 10; /* Asegura que el filtro esté por encima de otros elementos */
-  height: calc(100vh - 40px); /* Asegura que el filtro tenga la altura de la ventana */
+  z-index: 10; 
+  height: calc(100vh - 40px); 
   overflow-y: auto;
 }
+
 
 /* Contenedor de las categorías */
 .category-list {
   width: 100%;
-  max-width: 250px; /* Un ancho más pequeño para el filtro */
-  padding: 20px;
-  background-color: #f9f9f9;
+  max-width: 350px; 
+  padding: 10px;
   border-radius: 8px;
+  border-color: grey;
+  border-style: solid;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   list-style: none;
+  
 }
 
 /* Título del filtro */
@@ -56,18 +58,26 @@
 
 /* Efecto hover para los elementos de la lista */
 .category-item:hover {
-  background-color: #f1f1f1;
+  background: linear-gradient(to right, #0056b3, #003f7f); /* Degradado de azul oscuro a azul más intenso */
+  color: #fff; 
+  transition: background 0.3s ease, color 0.3s ease; 
 }
 
 /* Estilo para el elemento seleccionado */
 .category-item.selected {
-  background-color: #007bff;
+  background: linear-gradient(to left, #007bff, #0056b3); 
   color: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Efecto hover en el elemento seleccionado */
 .category-item.selected:hover {
-  background-color: #0056b3;
+  background: linear-gradient(to right, #0056b3, #003f7f); 
+  color: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
 }
+
+
 
 .loading-message {
   text-align: center;
